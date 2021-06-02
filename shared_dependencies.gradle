@@ -1,9 +1,3 @@
-android {
-    lintOptions {
-        abortOnError false
-    }
-}
-
 dependencies {
     // ui
     implementation 'androidx.appcompat:appcompat:1.3.0'
