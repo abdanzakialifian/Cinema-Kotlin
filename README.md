@@ -1,2 +1,2 @@
 # CinemaMADEFinal CircleCI
-https://app.circleci.com/pipelines/github/abdanzakialifian
+https://app.circleci.com/pipelines/github/abdanzakialifian/CinemaMADEFinal
