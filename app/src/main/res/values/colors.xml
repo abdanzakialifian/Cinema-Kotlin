@@ -11,4 +11,6 @@
     <color name="dark">#151b38</color>
     <color name="placeholder">#6FB6B6B6</color>
     <color name="indigo_500">#3f51b5</color>
+    <color name="gray">#DDDDDD</color>
+    <color name="dark_gray">#7F000000</color>
 </resources>

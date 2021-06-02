@@ -35,4 +35,10 @@ dependencies {
     //sqlcipher
     implementation "net.zetetic:android-database-sqlcipher:4.4.0"
     implementation "androidx.sqlite:sqlite-ktx:2.1.0"
+
+    //Lottie
+    implementation "com.airbnb.android:lottie:3.4.1"
+
+    //Shimmer
+    implementation "com.facebook.shimmer:shimmer:0.5.0"
 }

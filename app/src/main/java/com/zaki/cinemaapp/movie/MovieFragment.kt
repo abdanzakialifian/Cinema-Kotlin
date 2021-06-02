@@ -20,7 +20,6 @@ import com.zaki.cinemaapp.detail.DetailActivity.Companion.EXTRA_MOVIE
 import com.zaki.cinemaapp.detail.DetailActivity.Companion.EXTRA_TYPE
 import org.koin.android.viewmodel.ext.android.viewModel
 
-
 class MovieFragment : Fragment() {
 
     private val rotateOpen: Animation by lazy {

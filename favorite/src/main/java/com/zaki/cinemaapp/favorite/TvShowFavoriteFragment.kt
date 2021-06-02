@@ -20,17 +20,20 @@ import org.koin.android.viewmodel.ext.android.viewModel
 import org.koin.core.context.loadKoinModules
 
 class TvShowFavoriteFragment : Fragment() {
-    private lateinit var binding: FragmentTvShowFavoriteBinding
+
     private lateinit var tvShowAdapter: TvShowAdapter
     private val viewModel: FavoriteViewModel by viewModel()
+
+    private var _binding: FragmentTvShowFavoriteBinding? = null
+    private val binding get() = _binding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentTvShowFavoriteBinding.inflate(layoutInflater, container, false)
-        return binding.root
+        _binding = FragmentTvShowFavoriteBinding.inflate(layoutInflater, container, false)
+        return binding?.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -39,7 +42,7 @@ class TvShowFavoriteFragment : Fragment() {
         loadKoinModules(favoriteModule)
 
         if (activity != null) {
-            itemTouchHelper.attachToRecyclerView(binding.rvFavoriteTvShow)
+            itemTouchHelper.attachToRecyclerView(binding?.rvFavoriteTvShow)
 
             tvShowAdapter = TvShowAdapter()
             tvShowAdapter.onItemClick = { selectedData ->
@@ -51,10 +54,15 @@ class TvShowFavoriteFragment : Fragment() {
 
             viewModel.getFavoriteTvShow().observe(viewLifecycleOwner, { favoriteTvShow ->
                 if (favoriteTvShow != null) {
+                    if (favoriteTvShow.isNotEmpty()) {
+                        binding?.animEmpty?.visibility = View.GONE
+                    } else {
+                        binding?.animEmpty?.visibility = View.VISIBLE
+                    }
                     tvShowAdapter.setTvShow(favoriteTvShow)
                 }
 
-                with(binding.rvFavoriteTvShow) {
+                with(binding?.rvFavoriteTvShow!!) {
                     layoutManager = LinearLayoutManager(context)
                     setHasFixedSize(true)
                     adapter = tvShowAdapter
@@ -94,4 +102,9 @@ class TvShowFavoriteFragment : Fragment() {
             }
         }
     })
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
+    }
 }

@@ -21,22 +21,24 @@ import org.koin.core.context.loadKoinModules
 
 class MovieFavoriteFragment : Fragment() {
 
-    private lateinit var binding: FragmentMovieFavoriteBinding
     private lateinit var movieAdapter: MovieAdapter
     private val viewModel: FavoriteViewModel by viewModel()
+
+    private var _binding: FragmentMovieFavoriteBinding? = null
+    private val binding get() = _binding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentMovieFavoriteBinding.inflate(layoutInflater, container, false)
-        return binding.root
+        _binding = FragmentMovieFavoriteBinding.inflate(layoutInflater, container, false)
+        return binding?.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        itemTouchHelper.attachToRecyclerView(binding.rvFavoriteMovie)
+        itemTouchHelper.attachToRecyclerView(binding?.rvFavoriteMovie)
 
         loadKoinModules(favoriteModule)
 
@@ -51,10 +53,16 @@ class MovieFavoriteFragment : Fragment() {
 
             viewModel.getFavoriteMovie().observe(viewLifecycleOwner, { favoriteMovie ->
                 if (favoriteMovie != null) {
+                    if (favoriteMovie.isNotEmpty()) {
+                        binding?.animEmpty?.visibility = View.GONE
+                    } else {
+                        binding?.animEmpty?.visibility = View.VISIBLE
+                    }
+
                     movieAdapter.setMovie(favoriteMovie)
                 }
 
-                with(binding.rvFavoriteMovie) {
+                with(binding?.rvFavoriteMovie!!) {
                     layoutManager = LinearLayoutManager(context)
                     setHasFixedSize(true)
                     adapter = movieAdapter
@@ -95,4 +103,9 @@ class MovieFavoriteFragment : Fragment() {
             }
         }
     })
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
+    }
 }
