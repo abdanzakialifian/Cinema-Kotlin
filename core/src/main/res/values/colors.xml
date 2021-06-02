@@ -2,4 +2,5 @@
 <resources>
     <color name="white">#FFFFFFFF</color>
     <color name="dark">#151b38</color>
+    <color name="placeholder">#6FB6B6B6</color>
 </resources>
