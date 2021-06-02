@@ -3,7 +3,6 @@
     android:id="@+id/frame_container_favorite"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".favorite.ContainerFavorite">
+    android:layout_height="match_parent">
 
 </FrameLayout>
