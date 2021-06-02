@@ -54,7 +54,7 @@ class TvShowAdapter : RecyclerView.Adapter<TvShowAdapter.TvShowViewHolder>() {
         holder.bind(listTvShow[position])
     }
 
-    fun getSwipedData(swipedPosition: Int): TvShow? = listTvShow[swipedPosition]
+    fun getSwipedData(swipedPosition: Int): TvShow = listTvShow[swipedPosition]
 
     override fun getItemCount(): Int = listTvShow.size
 }

@@ -15,8 +15,8 @@
     <string name="favorite_tv_show">Favorite Tv Show</string>
     <string name="title_favorite">Module Title</string>
     <string name="background_image">Background Image</string>
-    <string name="image_movie_tvshow">Image Movie or TvShow</string>
-    <string name="image_share_movie_and_tvshow">Image Share Movie and TvShow</string>
+    <string name="image_movie_tvShow">Image Movie or TvShow</string>
+    <string name="image_share_movie_and_tvShow">Image Share Movie and TvShow</string>
     <string name="image_back">Image Back</string>
     <string name="image_star_one">Image Star One</string>
     <string name="image_star_two">Image Star Two</string>
@@ -25,5 +25,5 @@
     <string name="image_star_four">Image Star Four</string>
     <string name="image_search">Image Search</string>
     <string name="image_splash_screen">Image Splash Screen</string>
-    <string name="image_drawmenu">Image Drawmenu</string>
+    <string name="image_drawMenu">Image Drawmenu</string>
 </resources>

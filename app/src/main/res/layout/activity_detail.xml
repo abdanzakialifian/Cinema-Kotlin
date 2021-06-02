@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue_dark"
     tools:context=".detail.DetailActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -53,7 +52,7 @@
             android:layout_height="30dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:contentDescription="@string/image_share_movie_and_tvshow"
+            android:contentDescription="@string/image_share_movie_and_tvShow"
             android:src="@drawable/ic_share_white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -64,7 +63,7 @@
             android:layout_height="180dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="160dp"
-            android:contentDescription="@string/image_movie_or_tvshow"
+            android:contentDescription="@string/image_movie_tvShow"
             android:scaleType="centerCrop"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"

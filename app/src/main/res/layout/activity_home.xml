@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue_dark"
     android:orientation="vertical"
     android:padding="16sp"
     tools:context=".home.HomeActivity">
@@ -20,7 +19,7 @@
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:src="@drawable/ic_menu_white"
-            tools:ignore="ContentDescription" />
+            android:contentDescription="@string/image_drawMenu" />
 
         <ImageView
             android:layout_width="35dp"
